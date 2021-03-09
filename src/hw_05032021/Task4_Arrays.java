@@ -13,33 +13,33 @@ public class Task4_Arrays {
 
 
         double min = array[0];                               // поиск минимума
-        int numbermin=0;
+        int numbermin = 0;
         for (int i = 1; i < array.length; i++) {
             if (array[i] < min) {
                 min = array[i];
-                numbermin=i;
+                numbermin = i;
             }
         }
         System.out.println("Минимальный элемент " + min);
         System.out.println("Номер минимального элемента " + numbermin);
         double max = array[0];                               //поиск максимума
-        int numbermax=0;
+        int numbermax = 0;
         for (int i = 1; i < array.length; i++) {
             if (array[i] > max) {
                 max = array[i];
-                numbermax=i;
+                numbermax = i;
             }
         }
         System.out.println("Максимальный элемент " + max);
         System.out.println("Номер максимального элемента " + numbermax);
-        int qw=numbermin;                    //замена местами, если min элемент встречается раньше max
-        if (numbermin>numbermax){
-            numbermin=numbermax;
-            numbermax=qw;
+        int qw = numbermin;                    //замена местами, если min элемент встречается раньше max
+        if (numbermin > numbermax) {
+            numbermin = numbermax;
+            numbermax = qw;
         }
-        double result=1; //умножение
-        for (int i=(numbermin+1);i<numbermax;i++){
-            result*=array[i];
+        double result = 1; //умножение
+        for (int i = (numbermin + 1); i < numbermax; i++) {
+            result *= array[i];
         }
         System.out.println(result);
     }

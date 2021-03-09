@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class Task2_ConditionalOperator {
     public static void main(String[] args) {
-        Scanner in=new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
         System.out.println("Введите целое число n<10");
-        int n= in.nextInt();
-        switch (n){
+        int n = in.nextInt();
+        switch (n) {
             case 1:
                 System.out.println("Понедельник");
                 break;
