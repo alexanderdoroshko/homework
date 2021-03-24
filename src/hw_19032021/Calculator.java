@@ -21,8 +21,8 @@ public class Calculator {
     }
 
     public Calculator() {
-        this.x = 0;
-        this.y = 0;
+        this.x = 0.0;
+        this.y = 0.0;
     }
 
     public Calculator(double x, double y) {
@@ -30,20 +30,20 @@ public class Calculator {
         this.y = y;
     }
 
-    public double Summa(double x, double y) {
+    public double summa(double x, double y) {
         return x + y;
 
     }
 
-    public double Subtraction(double x, double y) {
+    public double subtraction(double x, double y) {
         return x - y;
     }
 
-    public double Multiplication(double x, double y) {
+    public double multiplication(double x, double y) {
         return x * y;
     }
 
-    public double Division(double x, double y) {
+    public double division(double x, double y) {
         return (x / y);
     }
 }

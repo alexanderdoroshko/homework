@@ -8,10 +8,10 @@ public class Computer_run {
         comp.info();
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите число равное 0 или 1");
-        int ON = sc.nextInt();
-        comp.OnComputer(ON);
-        int OFF = sc.nextInt();
-        comp.OffComputer(OFF);
+        int on = sc.nextInt();
+        comp.onComputer(on);
+        int off = sc.nextInt();
+        comp.offComputer(off);
     }
 }
 

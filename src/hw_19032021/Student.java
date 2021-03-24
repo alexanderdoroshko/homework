@@ -3,13 +3,13 @@ package hw_19032021;
 public class Student {
     private String name;
     private String surname;
-    private int dateofBirthday;
+    private int dateOfBirthday;
     private int course;
 
-    public Student(String name, String surname, int dateofBirthday, int course) {
+    public Student(String name, String surname, int dateOfBirthday, int course) {
         this.name = name;
         this.surname = surname;
-        this.dateofBirthday = dateofBirthday;
+        this.dateOfBirthday = dateOfBirthday;
         this.course = course;
     }
 
@@ -29,12 +29,12 @@ public class Student {
         this.surname = surname;
     }
 
-    public int getDateofBirthday() {
-        return dateofBirthday;
+    public int getDateOfBirthday() {
+        return dateOfBirthday;
     }
 
-    public void setDateofBirthday(int dateofBirthday) {
-        this.dateofBirthday = dateofBirthday;
+    public void setDateOfBirthday(int dateOfBirthday) {
+        this.dateOfBirthday = dateOfBirthday;
     }
 
     public int getCourse() {

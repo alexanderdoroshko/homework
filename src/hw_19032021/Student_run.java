@@ -21,7 +21,7 @@ public class Student_run {
     public static void printStudent(Student[] arrayStudent, int course) {
         for (Student st : arrayStudent) {
             if (st.getCourse() == course) {
-                System.out.println(st.getSurname() + " " + st.getName() + " " + st.getDateofBirthday());
+                System.out.println(st.getSurname() + " " + st.getName() + " " + st.getDateOfBirthday());
             }
         }
     }

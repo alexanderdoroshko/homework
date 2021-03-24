@@ -3,45 +3,45 @@ package hw_19032021;
 import java.util.Random;
 
 public class Computer {
-    private String CPU;
-    private int RAM;
-    private int HDD;
+    private String cpu;
+    private int ram;
+    private int hdd;
 
-    public Computer(String CPU, int RAM, int HDD) {
-        this.CPU = CPU;
-        this.RAM = RAM;
-        this.HDD = HDD;
+    public Computer(String cpu, int ram, int hdd) {
+        this.cpu = cpu;
+        this.ram = ram;
+        this.hdd = hdd;
     }
 
-    public String getCPU() {
-        return CPU;
+    public String getCpu() {
+        return cpu;
     }
 
-    public void setCPU(String CPU) {
-        this.CPU = CPU;
+    public void setCpu(String cpu) {
+        this.cpu = cpu;
     }
 
-    public int getRAM() {
-        return RAM;
+    public int getRam() {
+        return ram;
     }
 
-    public void setRAM(int RAM) {
-        this.RAM = RAM;
+    public void setRam(int ram) {
+        this.ram = ram;
     }
 
-    public int getHDD() {
-        return HDD;
+    public int getHdd() {
+        return hdd;
     }
 
-    public void setHDD(int HDD) {
-        this.HDD = HDD;
+    public void setHdd(int hdd) {
+        this.hdd = hdd;
     }
 
     public void info() {
-        System.out.printf("CPU: %s, RAM: %d GB, HDD: %d GB\n", CPU, RAM, HDD);
+        System.out.printf("CPU: %s, RAM: %d GB, HDD: %d GB\n", cpu, ram, hdd);
     }
 
-    public void OnComputer(int x) {
+    public void onComputer(int x) {
         Random rnd = new Random();
         int a = rnd.nextInt(2);
         if (x == a) {
@@ -51,7 +51,7 @@ public class Computer {
         }
     }
 
-    public void OffComputer(int x) {
+    public void offComputer(int x) {
         Random rnd = new Random();
         int a = rnd.nextInt(2);
         if (x == a) {

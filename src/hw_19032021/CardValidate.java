@@ -1,7 +1,7 @@
 package hw_19032021;
 
 public class CardValidate {
-    public void ValidateCard(long numberCard, String typeCard, String ownerCard, int validThru, int CVV) {
+    public void validateCard(long numberCard, String typeCard, String ownerCard, int validThru, int cvv) {
         class CardBank {
             private long number;
             private String type;
@@ -14,7 +14,7 @@ public class CardValidate {
                 this.type = typeCard;
                 this.owner = ownerCard;
                 this.validthru = validThru;
-                this.cvv = CVV;
+                this.cvv = cvv;
             }
 
             public long getNumber() {
@@ -29,15 +29,15 @@ public class CardValidate {
                 return owner;
             }
 
-            public int getValidthru() {
-                return validthru;
+            public int getValidThru() {
+                return validThru;
             }
 
             public int getCvv() {
                 return cvv;
             }
 
-            public void ValidateNumberCard() {                  // Код банковской карты содержит 16 цифр
+            public void validateNumberCard() {                  // Код банковской карты содержит 16 цифр
                 int numeral = (int) Math.log10(getNumber()) + 1;
                 if (numeral == 16) {
                     System.out.println("Количество цифр верно");
@@ -46,15 +46,15 @@ public class CardValidate {
                 }
             }
 
-            public void ValidateDate() {
-                if (2021 - getValidthru() < 4) {                  //Срок действия карты предположим 3 года
+            public void validateDate() {
+                if (2021 - getValidThru() < 4) {                  //Срок действия карты предположим 3 года
                     System.out.println("Карта действительна");
                 } else {
                     System.out.println("Срок действия карты истек");
                 }
             }
 
-            public void ValidateCVV() {
+            public void validateCVV() {
                 int numeral = (int) Math.log10(getCvv()) + 1;
                 if (numeral == 3) {
                     System.out.println("СVV верен");
@@ -63,7 +63,7 @@ public class CardValidate {
                 }
             }
 
-            public void ValidateType() {   //Здесь сравниваем строки, credit card, overdraft
+            public void validateType() {   //Здесь сравниваем строки, credit card, overdraft
                 String type = getType();
                 if (type == "zarplatnaya") {
                     System.out.println("Тип верен");
@@ -72,7 +72,7 @@ public class CardValidate {
                 }
             }
 
-            public void ValidateOwner() {     //В отсутствии владельца ввести пустую строку
+            public void validateOwner() {     //В отсутствии владельца ввести пустую строку
                 if (getOwner() == "") {
                     System.out.println("Владелец отсутствует");
                 } else {
@@ -81,11 +81,11 @@ public class CardValidate {
             }
         }
         CardBank alfa = new CardBank();
-        alfa.ValidateNumberCard();
-        alfa.ValidateDate();
-        alfa.ValidateCVV();
-        alfa.ValidateType();
-        alfa.ValidateOwner();
+        alfa.validateNumberCard();
+        alfa.validateDate();
+        alfa.validateCVV();
+        alfa.validateType();
+        alfa.validateOwner();
 
     }
 }
