@@ -13,10 +13,9 @@ public abstract class Transport {
         this.brand = brand;
     }
 
-    public void displayInfo() {
-    }
+    public abstract void  displayInfo();
 
-    public double powerKw(double power) {
+    protected double powerKw(double power) {
         return power * 0.74;
     }
 }

@@ -2,12 +2,12 @@ package hw_26032021;
 
 public abstract class AirTransport extends Transport {
     protected double wingspan;
-    protected double minimumRunwayLengthTakeOff;
+    protected double minimumRunwayLength;
 
-    public AirTransport(double power, double maxSpeed, double weight, String brand, double wingspan, double minimumRunwayLengthTakeOff) {
+    public AirTransport(double power, double maxSpeed, double weight, String brand, double wingspan, double minimumRunwayLength) {
         super(power, maxSpeed, weight, brand);
         this.wingspan = wingspan;
-        this.minimumRunwayLengthTakeOff = minimumRunwayLengthTakeOff;
+        this.minimumRunwayLength = minimumRunwayLength;
     }
 }
 

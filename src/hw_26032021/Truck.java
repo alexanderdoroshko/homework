@@ -10,15 +10,15 @@ public class Truck extends LandTransport {
 
     @Override
     public void displayInfo() {
-        System.out.printf("Car brand: %s, power engine: %.1f, max speed: %.1f, weight: %.1f, number of wheels: %d, fuel consumption: %.1f, load capacity: %.2f, power kw: %.2f\n",
+        System.out.printf("\n Марка грузовика: %s, мощность двигателя: %.1f, max скорость: %.1f, масса: %.1f, количество колес: %d, расход топлива: %.1f, грузоподъемность: %.2f, мощность двигателя в киловаттах: %.2f\n",
                 brand, power, maxSpeed, weight, numberWheels, fuelConsumption, loadCapacity, powerKw(power));
     }
 
     public void checkLoadCapacity(double weightCargo) {
         if (weightCargo <= loadCapacity) {
-            System.out.println("Грузовик загружен");
+            System.out.println("\n Грузовик загружен");
         } else {
-            System.out.println("Вам нужен грузовик побольше");
+            System.out.println("\n Вам нужен грузовик побольше");
         }
     }
 }

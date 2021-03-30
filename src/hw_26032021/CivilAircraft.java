@@ -1,28 +1,28 @@
 package hw_26032021;
 
 public class CivilAircraft extends AirTransport {
-    private int numberPassage;
-    private boolean hasBusinessClass;
+    private int passengersNumber;
+    private boolean isBusinessClass;
 
     public CivilAircraft(double power, double maxSpeed, double weight, String brand, double wingspan,
-                         double minimumRunwayLengthTakeOff, int numberPassage, boolean hasBusinessClass) {
+                         double minimumRunwayLengthTakeOff, int passengersNumber, boolean isBusinessClass) {
         super(power, maxSpeed, weight, brand, wingspan, minimumRunwayLengthTakeOff);
-        this.numberPassage = numberPassage;
-        this.hasBusinessClass = hasBusinessClass;
+        this.passengersNumber = passengersNumber;
+        this.isBusinessClass = isBusinessClass;
     }
 
     @Override
     public void displayInfo() {
-        System.out.printf("Airplane brand: %s, power engine: %.1f, max speed: %.1f, weight: %.1f, wingspan: %.2f, minimum runway length for take-off: %.1f, " +
-                        "number of passage: %d, business class: %b, power kw: %.2f\n", brand, power, maxSpeed, weight, wingspan, minimumRunwayLengthTakeOff, numberPassage,
-                hasBusinessClass, powerKw(power));
+        System.out.printf("\n Марка самолета: %s, мощность двигателя: %.1f, max скорость: %.1f, масса: %.1f, размах крыльев: %.2f, минимальная длина взлетно-посадочной полосы: %.1f, " +
+                        "число пассажиров: %d, наличие бизнесс класса: %b, мощность двигателя в киловаттах: %.2f\n", brand, power, maxSpeed, weight, wingspan, minimumRunwayLength, passengersNumber,
+                isBusinessClass, powerKw(power));
     }
 
     public void checkNumberPassage(int passage) {
-        if (passage <= numberPassage) {
-            System.out.println("Самолет загружен");
+        if (passage <= passengersNumber) {
+            System.out.println("\n Самолет загружен");
         } else {
-            System.out.println("Вам нужен самолет побольше");
+            System.out.println("\n Вам нужен самолет побольше");
         }
     }
 }

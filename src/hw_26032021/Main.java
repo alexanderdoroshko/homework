@@ -8,11 +8,11 @@ public class Main {
         Truck kamaz = new Truck(428, 150, 7990, "Kamaz-5490", 4, 30, 35.935);
 
 
-        CivilAircraft airbus = new CivilAircraft(3500, 945, 560000, "Airbus a380", 79.75,
+        CivilAircraft airbus = new CivilAircraft(3500, 945, 560_000, "Airbus a380", 79.75,
                 2050, 525, true);
 
 
-        MilitaryAircraft sukhoi = new MilitaryAircraft(2500, 2778, 50000, "Sukhoi-35", 14.75,
+        MilitaryAircraft sukhoi = new MilitaryAircraft(2500, 2778, 50_000, "Sukhoi-35", 14.75,
                 450, true, 30);
 
 

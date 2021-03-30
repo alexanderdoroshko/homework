@@ -13,8 +13,8 @@ public class MilitaryAircraft extends AirTransport {
 
     @Override
     public void displayInfo() {
-        System.out.printf("Airplane brand: %s, power engine: %.1f, max speed: %.1f, weight: %.1f, wingspan: %.2f, minimum runway length for take-off: %.1f, " +
-                        "ejection system: %b, number of rocket: %d, power kw: %.2f\n", brand, power, maxSpeed, weight, wingspan, minimumRunwayLengthTakeOff, ejectionSystem,
+        System.out.printf("\n Марка самолета: %s, мощность двигателя: %.1f, max скорость: %.1f, масса: %.1f, размах крыльев: %.2f, минимальная длина взлетно-посадочной полосы: %.1f, " +
+                        "система катапультирования: %b, количество ракет: %d, мощность двигателя в киловаттах: %.2f\n", brand, power, maxSpeed, weight, wingspan, minimumRunwayLength, ejectionSystem,
                 numberRocket, powerKw(power));
     }
 
@@ -30,9 +30,9 @@ public class MilitaryAircraft extends AirTransport {
 
     public void ejection(boolean ejectionSystem) {
         if (ejectionSystem) {
-            System.out.println("Катапультирование прошло успешно");
+            System.out.println("\n Катапультирование прошло успешно");
         } else {
-            System.out.println("У Вас нет такой системы");
+            System.out.println("\n У Вас нет такой системы");
         }
     }
 }
