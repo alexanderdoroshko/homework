@@ -36,16 +36,7 @@ public class Run {
         robot3.action();
         System.out.println();
 
-        int expensiveRobot;
-        if (robot1.getPrice() >= robot2.getPrice()) {
-            expensiveRobot = robot1.getPrice();
-        } else {
-            expensiveRobot = robot2.getPrice();
-        }
-
-        if (expensiveRobot < robot3.getPrice()) {
-            expensiveRobot = robot3.getPrice();
-        }
+        int expensiveRobot = Math.max(Math.max(robot1.getPrice(), robot2.getPrice()), robot3.getPrice());
         System.out.println("Самая большая цена " + expensiveRobot);
 
 
