@@ -1,16 +1,16 @@
 package hw_09042021.any_tupe_array;
 
-import hw_09042021.any_tupe_array.AnyTypeArray;
-
 public class AnyTypeArrayGenerics_run {
     public static void main(String[] args) {
-        AnyTypeArray arr1 =new AnyTypeArray(544,566,345);
-        AnyTypeArray arr2= new AnyTypeArray("Java","programming","is cool");
-        AnyTypeArray arr3 = new AnyTypeArray(41.3,-78.2,12.3);
+        AnyTypeArray<Integer> intObj = new AnyTypeArray<>(new Integer[]{566, 345, 765, 23425});
+        AnyTypeArray<String> strObj = new AnyTypeArray<>(new String[]{"Program", "java", "is cool"});
+        AnyTypeArray<Double> doubleObj = new AnyTypeArray<>(new Double[]{-545474.55,4774.78,56.56});
 
-        System.out.println(arr1.getElementArray(2));
-        System.out.println(arr2.getElementArray(1));
-        System.out.println(arr3.getElementArray(0));
+        System.out.println(intObj.getElementIndex(0));
+        System.out.println(strObj.getElementIndex(1));
+        System.out.println(doubleObj.getElementIndex(2));
+
+
     }
 }
 
