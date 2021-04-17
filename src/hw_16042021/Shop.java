@@ -31,7 +31,7 @@ public class Shop {
         if (!contain) {
             productList.add(product);
         } else {
-            System.out.println("Товар с таким id уже находится в магазине");
+            System.out.println("Товар с таким id уже находится в магазине\n");
         }
     }
 
@@ -50,9 +50,9 @@ public class Shop {
             }
         }
         if (contain) {
-            System.out.println("Товар удален из магазина");
+            System.out.println("Товар удален из магазина\n");
         } else {
-            System.out.println("Товара с таким id в магазине нет");
+            System.out.println("Товара с таким id в магазине нет\n");
         }
     }
 
@@ -71,9 +71,9 @@ public class Shop {
             }
         }
         if (contain) {
-            System.out.println("Замена проведена успешно");
+            System.out.println("Замена проведена успешно\n");
         } else {
-            System.out.println("Товара с таким id в магазине нет");
+            System.out.println("Товара с таким id в магазине нет\n");
         }
     }
 
