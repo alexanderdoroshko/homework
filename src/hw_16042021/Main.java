@@ -35,7 +35,7 @@ public class Main {
         Collections.reverse(tmp); // Сортировка по дате добавления
         System.out.println(tmp);
 
-        vitalur.correctedProduct(4564321);
+        vitalur.editProduct(4564321);
         vitalur.getAllProduct();
 
 

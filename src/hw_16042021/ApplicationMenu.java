@@ -7,11 +7,8 @@ import java.util.Scanner;
 
 public class ApplicationMenu {
 
-
     public ApplicationMenu() {
     }
-
-
 
     public void start() throws IOException {
         Shop evroopt = new Shop(new ArrayList<Product>());
@@ -27,10 +24,7 @@ public class ApplicationMenu {
         evroopt.addProduct(onion);
         evroopt.addProduct(turnip);
 
-
-
-        for (; ; ) {
-
+        while (true) {
             System.out.println("Добро пожаловать в магазин!\n");
             System.out.println("Выберите действие. Нажмите:");
             System.out.println("1 Для вывода всех товаров");
@@ -42,9 +36,6 @@ public class ApplicationMenu {
 
             String str = choice.nextLine();
             if (str.equals("q")) break;
-
-
-
 
             switch (str) {
                 case "1":
@@ -69,19 +60,16 @@ public class ApplicationMenu {
                         default:
                             System.out.println("Некорректный ввод");
                     }
-
                     break;
-
                 case "2":
                     System.out.println("Введите параметры товара: id, название цена");
-                    Product productUser = new Product(choice.nextInt(), choice.nextLine(), choice.nextInt());
-                    for (Product p: evroopt.getProductList())
-                        if (p.getId() == productUser.getId()) {
+                    Product productNew = new Product(choice.nextInt(), choice.nextLine(), choice.nextInt());
+                    for (Product p : evroopt.getProductList())
+                        if (p.getId() == productNew.getId()) {
                             System.out.println("Товар с таким id уже есть в списке");
-                        }else {
-                            evroopt.getProductList().add(productUser);
+                        } else {
+                            evroopt.getProductList().add(productNew);
                         }
-
                     break;
                 case "3":
                     System.out.println("Введите id товара, который хотите удалить");
@@ -89,7 +77,7 @@ public class ApplicationMenu {
                     break;
                 case "4":
                     System.out.println("Введите id товара, который хотите отредактировать");
-                    evroopt.correctedProduct(choice.nextInt());
+                    evroopt.editProduct(choice.nextInt());
                     break;
                 default:
                     System.out.println("Некорректный ввод");

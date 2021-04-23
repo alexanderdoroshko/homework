@@ -6,13 +6,10 @@ public class Application {
     public static void main(String[] args) {
         ApplicationMenu applicationMenu = new ApplicationMenu();
 
-
         try {
             applicationMenu.start();
         } catch (IOException e) {
             e.getMessage();
         }
-
-
     }
 }

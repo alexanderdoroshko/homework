@@ -3,17 +3,14 @@ package hw_16042021;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class Shop {
     private ArrayList<Product> productList;
-
 
     public Shop(ArrayList<Product> productList) {
         this.productList = productList;
     }
 
     public Shop() {
-
     }
 
     public ArrayList<Product> getProductList() {
@@ -56,7 +53,7 @@ public class Shop {
         }
     }
 
-    public void correctedProduct(int id) {
+    public void editProduct(int id) {
         boolean contain = false;
         for (Product p : productList) {
             if (p.getId() == id) {
@@ -76,7 +73,6 @@ public class Shop {
             System.out.println("Товара с таким id в магазине нет\n");
         }
     }
-
 
     @Override
     public String toString() {
