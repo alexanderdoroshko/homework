@@ -10,7 +10,7 @@ public class Censor {
         ArrayList<String> censoredText = new ArrayList<>();
         ArrayList<String> blackList = new ArrayList<>();
 
-        try (BufferedReader bfr = new BufferedReader(new FileReader("D://tmp//censor.txt"))) {
+        try (BufferedReader bfr = new BufferedReader(new FileReader(PathFile.CENSORIN.path))) {
             String s;
             while ((s = bfr.readLine()) != null) {
                 censoredText.add(s);
@@ -21,7 +21,7 @@ public class Censor {
         System.out.println(censoredText.toString());
 
 
-        try (BufferedReader bfr = new BufferedReader(new FileReader("D://tmp//blacklist.txt"))) {
+        try (BufferedReader bfr = new BufferedReader(new FileReader(PathFile.BLACKLIST.path))) {
             String s;
             while ((s = bfr.readLine()) != null) {
                 blackList.add(s);

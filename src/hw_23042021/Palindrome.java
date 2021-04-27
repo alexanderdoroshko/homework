@@ -7,7 +7,7 @@ public class Palindrome {
     public static void main(String[] args) {
         ArrayList<String> word = new ArrayList<>();
 
-        try (BufferedReader br = new BufferedReader(new FileReader("D://tmp//palindrome.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(PathFile.PALINDROMEINPUT.path))) {
             String s;
             while ((s = br.readLine()) != null) {
                 word.add(s);
@@ -26,7 +26,7 @@ public class Palindrome {
         }
         System.out.println(palindrome.toString());
 
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("D://tmp//newpalindrome.txt"))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(PathFile.PALINDROMEOUTPUT.path))) {
             bw.write(palindrome.toString());
         } catch (IOException ex) {
             System.out.println(ex.getMessage());

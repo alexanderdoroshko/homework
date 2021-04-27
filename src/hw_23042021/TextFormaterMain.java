@@ -7,7 +7,7 @@ public class TextFormaterMain {
     public static void main(String[] args) {
         ArrayList<String> someText = new ArrayList<>();
 
-        try (BufferedReader br = new BufferedReader(new FileReader("D://tmp//someText.txt"))) { //Считываем построчно
+        try (BufferedReader br = new BufferedReader(new FileReader(PathFile.TEXTFORMATERINPUT.path))) { //Считываем построчно
             String s;
             while ((s = br.readLine()) != null) {
                 someText.add(s);
@@ -28,7 +28,7 @@ public class TextFormaterMain {
 
         TextFormater textFormater = new TextFormater();
 
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("D://tmp//someTextCorrect.txt"))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(PathFile.TEXTFORMATEROUTPUT.path))) {
             for (String s : sentence) {
                 if (textFormater.numberWord(s) > 3 && textFormater.numberWord(s) < 5 || textFormater.isPalindrome(s)) {
                     s = s + ".";
