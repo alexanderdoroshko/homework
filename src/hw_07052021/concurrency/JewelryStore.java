@@ -22,8 +22,8 @@ public class JewelryStore {
 
             } else if (consumerCounter < 4) {
                 try {
-                    Thread.sleep(10000);
                     System.out.println("Магазин закрыт на перерыв");
+                    Thread.currentThread().join(10000);
                 } catch (InterruptedException interruptedException) {
                     interruptedException.printStackTrace();
                 }
