@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xv:schema xmlns:xv="http://www.w3.org/2001/XM">
+
+    <xv:simpleType name="stringtype">
+        <xv:restriction base="xv:string"/>
+    </xv:simpleType>
+
+    <xv:simpleType name="nametupe">
+        <xv:restriction base="xv:string"/>
+    </xv:simpleType>
+
+    <xv:complexType name="employeetype">
+        <xv:sequence>
+            <xv:element name="full_name" type="stringtype"/>
+            <xv:element name="post" type="stringtype"/>
+            <xv:element name="hospital_ward" type="stringtype"/>
+            <xv:element name="work_experience" type="stringtype"/>
+        </xv:sequence>
+    </xv:complexType>
+
+    <xv:complexType name="stuff_hospitaltype">
+        <xv:sequence>
+            <xv:element name="employee" type="employeetype" maxOccurus="unbounded"/>
+        </xv:sequence>
+        <xv:attribute name="name" type="nametype" use="required"/>
+    </xv:complexType>
+
+    <xv:element name="stuff_hospital" type="stuff_hospitaltype"/>
+
+</xv:schema>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<!DOCTYPE stuff_hospital [
+        <!-- Объявление возможных элементов -->
+        <!ELEMENT stuff_hospital (employee+)>
+        <!ELEMENT employee (full_name, post, hospital_ward, work_experience)>
+        <!ELEMENT full_name (#PCDATA)>
+        <!ELEMENT post (#PCDATA)>
+        <!ELEMENT hospital_ward (#PCDATA)>
+        <!ELEMENT work_experience (#PCDATA)>
+
+        <!-- Добавление атрибутов -->
+        <!ATTLIST stuff_hospital
+                name CDATA #REQUIRED
+                >
+        ]>
+
+
+<stuff_hospital name="Больница Святой Марии">
+    <employee>
+        <full_name>Хаус Грегори Иванович</full_name>
+        <post>врач-хирург</post>
+        <hospital_ward>хирургическое</hospital_ward>
+        <work_experience>10</work_experience>
+    </employee>
+    <employee>
+        <full_name>Морлок Мария Александровна</full_name>
+        <post>медсестра</post>
+        <hospital_ward>хирургическое</hospital_ward>
+        <work_experience>5</work_experience>
+    </employee>
+    <employee>
+        <full_name>Саблезуб Петр Павлович</full_name>
+        <post>врач-терапевт</post>
+        <hospital_ward>терапевтическое</hospital_ward>
+        <work_experience>8</work_experience>
+    </employee>
+    <employee>
+        <full_name>Диметреску Анна Николаевна</full_name>
+        <post>медсестра</post>
+        <hospital_ward>терапевтическое</hospital_ward>
+        <work_experience>2</work_experience>
+    </employee>
+</stuff_hospital>
+

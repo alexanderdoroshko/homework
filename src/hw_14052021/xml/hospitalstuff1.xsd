@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XM">
+
+    <xs:element name="stuff_hospital">
+        <xs:complexType>
+            <xs:element name="employee" maxOccurus="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="full_name" type="xs:string"/>
+                        <xs:element name="post" type="xs:string"/>
+                        <xs:element name="hospital_ward" type="xs:string"/>
+                        <xs:element name="work_experience" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xv:schema xmlns:xv="http://www.w3.org/2001/XM">
+    <!-- Объявление простых элементов -->
+    <xv:element name="full_name" type="xv:string"/>
+    <xv:element name="post" type="xv:string"/>
+    <xv:element name="hospital_ward" type="xv:string"/>
+    <xv:element name="work_experience" type="xv:string"/>
+
+    <!-- Объявление атрибутов -->
+    <xv:attribute name="name" type="xv:string"/>
+
+    <!-- Объявление сложных элементов -->
+    <xv:element name="employee">
+        <xv:ComlexType>
+            <xv:sequence>
+                <xv:element ref="full_name"/>
+                <xv:element ref="post"/>
+                <xv:element ref="hospital_ward"/>
+                <xv:element ref="work_experience"/>
+            </xv:sequence>
+        </xv:ComlexType>
+    </xv:element>
+    <xv:element name="stuff_hospital">
+        <xv:ComlexType>
+            <xv:sequence>
+                <xv:element ref="employee" maxOccurus="unbounded"/>
+            </xv:sequence>
+            <xv:attribute ref="name" use="required"/>
+        </xv:ComlexType>
+    </xv:element>
+
+</xv:schema>
