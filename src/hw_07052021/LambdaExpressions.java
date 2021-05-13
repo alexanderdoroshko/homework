@@ -3,6 +3,7 @@ package hw_07052021;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class LambdaExpressions {
     public static void main(String[] args) {
@@ -19,7 +20,8 @@ public class LambdaExpressions {
         }
         System.out.println();
 
-        arrayCollection.sort((o1, o2) -> o1.length - o2.length);
+
+        arrayCollection.sort(Comparator.comparingInt(o -> o.length));
         for (String[] str : arrayCollection) {
             System.out.println(Arrays.toString(str));
         }
