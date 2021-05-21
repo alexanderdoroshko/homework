@@ -1,0 +1,3 @@
+module printer {
+    requires database;
+}
