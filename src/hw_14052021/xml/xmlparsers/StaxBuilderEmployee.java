@@ -29,7 +29,8 @@ public class StaxBuilderEmployee {
         try (FileInputStream inputStream = new FileInputStream(filename)) {
             reader = inputFactory.createXMLStreamReader(inputStream);
 // StAX parsing
-            while (reader.hasNext()) {                int type = reader.next();
+            while (reader.hasNext()) {
+                int type = reader.next();
                 if (type == XMLStreamConstants.START_ELEMENT) {
                     name = reader.getLocalName();
                     if (name.equals(EmployeeXmlTag.EMPLOYEE.getValue())) {
@@ -77,10 +78,6 @@ public class StaxBuilderEmployee {
         }
         return text;
     }
-
-
-
-
 
 }
 
