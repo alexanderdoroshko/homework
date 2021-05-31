@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/summa")
-public class Summa extends HttpServlet {
+@WebServlet("/calculator")
+public class Calc extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -20,7 +20,22 @@ public class Summa extends HttpServlet {
         String num2 = req.getParameter("number2");
         double num1Double = Double.parseDouble(num1);
         double num2Double = Double.parseDouble(num2);
-        resp.getWriter().write("Summa " + calculator.summa(num1Double, num2Double));
+        String operation = req.getParameter("operation");
+
+        switch (operation) {
+            case "summa":
+                resp.getWriter().write("Summa " + calculator.summa(num1Double, num2Double));
+                break;
+            case "subtraction":
+                resp.getWriter().write("subtraction " + calculator.subtraction(num1Double, num2Double));
+                break;
+            case "multiplication":
+                resp.getWriter().write("multiplication " + calculator.multiplication(num1Double, num2Double));
+                break;
+            case "division":
+                resp.getWriter().write("division " + calculator.division(num1Double, num2Double));
+                break;
+        }
 
     }
 
