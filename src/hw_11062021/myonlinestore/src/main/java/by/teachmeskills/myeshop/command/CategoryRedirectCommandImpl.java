@@ -1,20 +1,14 @@
-package by.teachmeskills.bootstrap.utils;
+package by.teachmeskills.myeshop.command;
 
-import by.teachmeskills.bootstrap.model.Product;
+import by.teachmeskills.myeshop.PagesPathEnum;
+import by.teachmeskills.myeshop.exceptions.CommandException;
+import by.teachmeskills.myeshop.model.Product;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/product")
-public class HardCodeServletProduct extends HttpServlet {
-
+public class CategoryRedirectCommandImpl implements BaseCommand {
     public List<Product> getProductMobile() {
         List<Product> products = new ArrayList<>();
         Product xiaomi = new Product(1, "Смартфон Xiaomi Mi 11 Lite 6GB/128GB международная версия с NFC",
@@ -115,7 +109,7 @@ public class HardCodeServletProduct extends HttpServlet {
         return products;
     }
 
-   public List<Product> getProductCar() {
+    public List<Product> getProductCar() {
         List<Product> products = new ArrayList<>();
         Product lexus = new Product(16, "Lexus NX",
                 "2018 г., автомат, 2.0 л, бензин, 50 000 км",
@@ -137,46 +131,42 @@ public class HardCodeServletProduct extends HttpServlet {
 
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String categoryType = req.getParameter("categoryType");
+    public String execute(HttpServletRequest request) throws CommandException {
+        String categoryType = request.getParameter("categoryType");
 
         switch (categoryType) {
             case ("Mobile phones"): {
                 List<Product> products = getProductMobile();
-                req.setAttribute("products", products);
+                request.setAttribute("products", products);
                 break;
             }
             case ("Laptop"): {
                 List<Product> products = getProductLaptop();
-                req.setAttribute("products", products);
+                request.setAttribute("products", products);
                 break;
             }
             case ("Fridges"): {
                 List<Product> products = getProductFridges();
-                req.setAttribute("products", products);
+                request.setAttribute("products", products);
                 break;
             }
             case ("Cameras"): {
                 List<Product> products = getProductCamera();
-                req.setAttribute("products", products);
+                request.setAttribute("products", products);
                 break;
             }
             case ("GPS navigators"): {
                 List<Product> products = getProductGps();
-                req.setAttribute("products", products);
+                request.setAttribute("products", products);
                 break;
             }
             case ("Car"): {
                 List<Product> products = getProductCar();
-                req.setAttribute("products", products);
+                request.setAttribute("products", products);
                 break;
             }
         }
+        return PagesPathEnum.PRODUCT_PAGE.getPath();
 
-        resp.setContentType("text/html");
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("product.jsp");
-        requestDispatcher.forward(req, resp);
     }
 }
-
-

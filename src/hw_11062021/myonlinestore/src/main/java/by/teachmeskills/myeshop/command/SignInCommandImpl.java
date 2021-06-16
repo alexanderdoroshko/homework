@@ -1,18 +1,18 @@
-package by.teachmeskills.bootstrap.command;
+package by.teachmeskills.myeshop.command;
 
-import by.teachmeskills.bootstrap.PagesPathEnum;
-import by.teachmeskills.bootstrap.RequestParamsEnum;
-import by.teachmeskills.bootstrap.exceptions.CommandException;
-import by.teachmeskills.bootstrap.exceptions.RequestParamNullException;
-import by.teachmeskills.bootstrap.model.Category;
-import by.teachmeskills.bootstrap.model.User;
+import by.teachmeskills.myeshop.PagesPathEnum;
+import by.teachmeskills.myeshop.RequestParamsEnum;
+import by.teachmeskills.myeshop.exceptions.CommandException;
+import by.teachmeskills.myeshop.exceptions.RequestParamNullException;
+import by.teachmeskills.myeshop.model.Category;
+import by.teachmeskills.myeshop.model.User;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
-import static by.teachmeskills.bootstrap.RequestParamsEnum.CATEGORY;
-import static by.teachmeskills.bootstrap.utils.HttpRequestParamValidator.ValidateParamNotNull;
+import static by.teachmeskills.myeshop.RequestParamsEnum.CATEGORY;
+import static by.teachmeskills.myeshop.utils.HttpRequestParamValidator.ValidateParamNotNull;
 
 public class SignInCommandImpl implements BaseCommand {
     private static final String ADMIN_LOGIN = "admin";

@@ -1,4 +1,4 @@
-package by.teachmeskills.bootstrap.exceptions;
+package by.teachmeskills.myeshop.exceptions;
 
 public class CommandException extends Exception {
 

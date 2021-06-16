@@ -1,4 +1,4 @@
-package by.teachmeskills.bootstrap.model;
+package by.teachmeskills.myeshop.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;

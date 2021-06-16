@@ -22,16 +22,13 @@
         <div class="row">
             <c:forEach items="${categories}" var="category">
                 <div class="card w-25 m-1" type="category">
-                    <form method="post" action="${pageContext.request.contextPath}/product">
-                        <div class="card-body">
-                            <input type="hidden" name="categoryType" value="${category.getName()}">
-                            <h4 class="card-title">${category.getName()}</h4>
-                            <input type="image" src="${contextPath}/images/${category.getImageName()}"
-                                   style="width:150px;height:120px" alt="Category image" name="submit">
-                                <%--                             src="${contextPath}/images/${category.getImageName()}" alt="Card image">--%>
-                                <%--                             src="${contextPath}/${category.getImageName()}" alt="Card image">--%>
-                        </div>
-                    </form>
+                    <div class="card-body">
+                        <input type="hidden" name="categoryType" value="${category.getName()}">
+                        <h4 class="card-title">${category.getName()}</h4>
+                        <a href="${contextPath}/eshop?command=category-redirect&categoryType=${category.getName()}">
+                            <img src="${contextPath}/images/${category.getImageName()}" style="width:150px;height:120px"
+                                 alt="Category image"></a>
+                    </div>
                 </div>
             </c:forEach>
         </div>

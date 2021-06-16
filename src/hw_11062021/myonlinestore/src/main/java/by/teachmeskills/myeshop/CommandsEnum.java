@@ -1,4 +1,4 @@
-package by.teachmeskills.bootstrap;
+package by.teachmeskills.myeshop;
 
 public enum CommandsEnum {
     HOME_PAGE_COMMAND("start page"),

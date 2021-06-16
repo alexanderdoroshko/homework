@@ -1,9 +1,9 @@
-package by.teachmeskills.bootstrap;
+package by.teachmeskills.myeshop;
 
 
-import by.teachmeskills.bootstrap.command.BaseCommand;
-import by.teachmeskills.bootstrap.command.CommandFactory;
-import by.teachmeskills.bootstrap.exceptions.CommandException;
+import by.teachmeskills.myeshop.command.BaseCommand;
+import by.teachmeskills.myeshop.command.CommandFactory;
+import by.teachmeskills.myeshop.exceptions.CommandException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -33,9 +33,9 @@ public class ApplicationServlet extends HttpServlet {
         try {
             path = requestCommand.execute(request);
             RequestDispatcher dispatcher = request.getRequestDispatcher(path);
-            dispatcher.forward(request,response);
+            dispatcher.forward(request, response);
         } catch (CommandException | ServletException | IOException e) {
-            request.getRequestDispatcher(PagesPathEnum.SIGN_IN_PAGE.getPath()).forward(request,response);
+            request.getRequestDispatcher(PagesPathEnum.SIGN_IN_PAGE.getPath()).forward(request, response);
         }
     }
 }

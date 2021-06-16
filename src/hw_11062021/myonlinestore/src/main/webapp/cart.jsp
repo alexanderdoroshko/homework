@@ -19,12 +19,16 @@
     <c:forEach items="${cartProductsList}" var="product">
         <div class="card w-25 m-1" type="product">
             <div class="card-body">
-                <h4 class="card-title">${product.getDescription()}</h4>
+                <img src="${contextPath}/images/${product.getImageName()}" style="width:150px;height:120px"
+                     alt="${product.getName()}">
                 <h4 class="card-title">${product.getDescription()}</h4>
                 <h4 class="card-title">${product.getPrice()}</h4>
             </div>
         </div>
     </c:forEach>
+</div>
+<div>
+    <h3>Итого ${totalPrice}</h3>
 </div>
 
 

@@ -1,6 +1,6 @@
-package by.teachmeskills.bootstrap.utils;
+package by.teachmeskills.myeshop.utils;
 
-import by.teachmeskills.bootstrap.exceptions.RequestParamNullException;
+import by.teachmeskills.myeshop.exceptions.RequestParamNullException;
 
 public class HttpRequestParamValidator {
     private static final String REQUEST_PARAMETER_IS_NULL_ERROR = "Request parameter is not initialized";
