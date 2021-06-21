@@ -3,14 +3,17 @@ package by.teachmeskills.myeshop.command;
 import by.teachmeskills.myeshop.exceptions.CommandException;
 import by.teachmeskills.myeshop.model.Cart;
 import by.teachmeskills.myeshop.model.Product;
+import by.teachmeskills.myeshop.utils.ProductGenerator;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 import java.util.List;
 
 import static by.teachmeskills.myeshop.PagesPathEnum.PRODUCT_PAGE;
-import static by.teachmeskills.myeshop.RequestParamsEnum.*;
+import static by.teachmeskills.myeshop.RequestParamsEnum.PRODUCT_ID;
+import static by.teachmeskills.myeshop.RequestParamsEnum.SHOPPING_CART;
+import static by.teachmeskills.myeshop.RequestParamsEnum.PRODUCT;
+
 
 public class AddProductToCartCommand implements BaseCommand {
 
@@ -19,22 +22,8 @@ public class AddProductToCartCommand implements BaseCommand {
         HttpSession session = request.getSession();
         int productId = Integer.parseInt(request.getParameter(PRODUCT_ID.getValue()));
 
-        List<Product> allItems = new ArrayList<>();
-
-        CategoryRedirectCommandImpl categoryRedirectCommand = new CategoryRedirectCommandImpl();
-        List<Product> mobile = categoryRedirectCommand.getProductMobile();
-        List<Product> laptop = categoryRedirectCommand.getProductLaptop();
-        List<Product> camera = categoryRedirectCommand.getProductCamera();
-        List<Product> gps = categoryRedirectCommand.getProductGps();
-        List<Product> car = categoryRedirectCommand.getProductCar();
-        List<Product> fridge = categoryRedirectCommand.getProductFridges();
-
-        allItems.addAll(mobile);
-        allItems.addAll(laptop);
-        allItems.addAll(camera);
-        allItems.addAll(gps);
-        allItems.addAll(car);
-        allItems.addAll(fridge);
+        ProductGenerator productGenerator = new ProductGenerator();
+        List<Product> allItems = productGenerator.getAllProduct();
 
         Product findItems = null;
 

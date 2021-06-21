@@ -3,11 +3,11 @@ package by.teachmeskills.myeshop.model;
 import java.util.Objects;
 
 public class Product {
-    protected int id;
-    protected String name;
-    protected String description;
-    protected int price;
-    protected String imageName;
+    private int id;
+    private String name;
+    private String description;
+    private int price;
+    private String imageName;
 
     public Product(int id, String name, String description, int price, String imageName) {
         this.id = id;

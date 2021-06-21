@@ -6,9 +6,9 @@ import by.teachmeskills.myeshop.exceptions.CommandException;
 import by.teachmeskills.myeshop.exceptions.RequestParamNullException;
 import by.teachmeskills.myeshop.model.Category;
 import by.teachmeskills.myeshop.model.User;
+import by.teachmeskills.myeshop.utils.CategoryGenerator;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
 import java.util.List;
 
 import static by.teachmeskills.myeshop.RequestParamsEnum.CATEGORY;
@@ -36,8 +36,8 @@ public class SignInCommandImpl implements BaseCommand {
         ValidateParamNotNull(password);
 
         if (user != null && login.equals(ADMIN_LOGIN) && password.equals(ADMIN_PASSWORD)) {
-            HomePageCommandImpl homePageCommand = new HomePageCommandImpl();
-            List<Category> categories = homePageCommand.getCategories();
+            CategoryGenerator categoryGenerator = new CategoryGenerator();
+            List<Category> categories = categoryGenerator.getCategories();
 
             request.setAttribute(CATEGORY.getValue(), categories);
 
